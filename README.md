@@ -1,4 +1,4 @@
-# Baby Care Store Project [Client]
+# Baby Care Store Project [Server]
 
 This project is mainly focus on kids accessories items Store.
 
@@ -11,16 +11,15 @@ This project is mainly focus on kids accessories items Store.
 
 ## Live URL
 
-The live version of the Winter Clothes Management System can be accessed [here](https://baby-care-store-frontend.vercel.app/).
+The live version of the Baby Care Store Project can be accessed [here](https://baby-care-store-backend-asheque33-asheque33s-projects.vercel.app/).
 
 ## Technologies Used
 
-- **Client:**
+- **Server:**
 
-  - Next js
-  - React Router
-  - TailwindCSS
-  - Daisyui
+  - MongoDB
+  - Node Js
+  - Express Js
 
 ## Installation
 
