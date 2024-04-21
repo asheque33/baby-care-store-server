@@ -39,15 +39,31 @@ async function run() {
       });
     });
     // get a specific product
-    app.get("/products/:id", async (req, res) => {
-      const id = req.params.id;
-      const _id = { _id: new ObjectId(id) };
-      const result = await productsCollection.findOne(_id);
-      res.status(200).json({
-        success: true,
-        message: "Product retrieved successfully",
-        data: result,
-      });
+    app.get("/products/:productId", async (req, res) => {
+      try {
+        const id = req.params.productId;
+        const _id = { _id: new ObjectId(id) };
+        const result = await productsCollection.findOne(_id);
+        console.log(result);
+        if (!result) {
+          res.status(404).json({
+            success: false,
+            message: "Product not found",
+          });
+        } else {
+          res.status(200).json({
+            success: true,
+            message: "Product retrieved successfully",
+            data: result,
+          });
+        }
+      } catch (error) {
+        console.error(error);
+        res.status(500).json({
+          success: false,
+          message: "Internal server error",
+        });
+      }
     });
     // get specific categories
     app.get("/baby-accessories", async (req, res) => {
